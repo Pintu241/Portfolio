@@ -1,0 +1,126 @@
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Mono:wght@300;400;500&display=swap');
+@import "tailwindcss";
+
+:root {
+  --cyan:   #22d3ee;
+  --violet: #a855f7;
+  --azure:  #38bdf8;
+  --glass:  rgba(10, 16, 32, 0.55);
+  --glass-border: rgba(100, 160, 255, 0.12);
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: #040810;
+  color: #e2e8f0;
+  font-family: 'DM Mono', 'Courier New', monospace;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+/* ── Custom cursor ────────────────────────────── */
+.cursor-dot {
+  width: 8px; height: 8px;
+  background: var(--cyan);
+  border-radius: 50%;
+  position: fixed;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+  transition: transform 0.1s, background 0.3s;
+  box-shadow: 0 0 12px var(--cyan), 0 0 24px var(--cyan);
+}
+.cursor-ring {
+  width: 36px; height: 36px;
+  border: 1.5px solid rgba(34, 211, 238, 0.55);
+  border-radius: 50%;
+  position: fixed;
+  pointer-events: none;
+  z-index: 9998;
+  transform: translate(-50%, -50%);
+  transition: transform 0.18s ease, width 0.25s, height 0.25s, border-color 0.3s;
+}
+
+/* ── Glass cards ──────────────────────────────── */
+.glass {
+  background: var(--glass);
+  border: 1px solid var(--glass-border);
+  backdrop-filter: blur(18px) saturate(1.6);
+  -webkit-backdrop-filter: blur(18px) saturate(1.6);
+}
+
+/* ── Scrollbar ────────────────────────────────── */
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: #040810; }
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, var(--cyan), var(--violet));
+  border-radius: 2px;
+}
+
+/* ── Selection ────────────────────────────────── */
+::selection { background: rgba(34, 211, 238, 0.25); color: #fff; }
+
+/* ── Typography ───────────────────────────────── */
+h1, h2, h3 { font-family: 'Syne', sans-serif; }
+
+/* ── Animations ───────────────────────────────── */
+@keyframes typing {
+  from { width: 0 }
+  to   { width: 100% }
+}
+@keyframes blink {
+  50% { border-color: transparent }
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes scrollDown {
+  0%   { transform: translateY(0); opacity: 0.6; }
+  100% { transform: translateY(8px); opacity: 0; }
+}
+@keyframes floatUp {
+  0%   { transform: translateY(0px);  opacity: 0.7; }
+  50%  { transform: translateY(-10px); opacity: 1; }
+  100% { transform: translateY(0px);  opacity: 0.7; }
+}
+@keyframes shimmer {
+  0%   { background-position: -200% center; }
+  100% { background-position:  200% center; }
+}
+
+.animate-typing {
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 3px solid var(--cyan);
+  animation: typing 2.5s steps(30, end) forwards, blink 0.8s step-end infinite 2.5s;
+}
+.animate-fadeIn  { animation: fadeIn 0.6s ease both; }
+.animate-scrollDown { animation: scrollDown 1.4s ease-in-out infinite; }
+.animate-float   { animation: floatUp 3.5s ease-in-out infinite; }
+
+/* ── Shimmer text ─────────────────────────────── */
+.text-shimmer {
+  background: linear-gradient(90deg, var(--cyan) 0%, var(--violet) 40%, var(--azure) 70%, var(--cyan) 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: shimmer 4s linear infinite;
+}
+
+/* ── Neon border ──────────────────────────────── */
+.neon-border {
+  border: 1px solid rgba(34,211,238,0.3);
+  box-shadow: 0 0 12px rgba(34,211,238,0.08), inset 0 0 20px rgba(34,211,238,0.03);
+  transition: box-shadow 0.3s, border-color 0.3s;
+}
+.neon-border:hover {
+  border-color: rgba(34,211,238,0.6);
+  box-shadow: 0 0 24px rgba(34,211,238,0.18), inset 0 0 30px rgba(34,211,238,0.06);
+}
