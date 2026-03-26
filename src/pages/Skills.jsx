@@ -8,7 +8,7 @@ const Skills = () => {
     Languages: [
       { name: "C/C++", icon: "/icons/cpp.png", proficiency: 75 },
       { name: "JavaScript", icon: "/icons/javascript.png", proficiency: 90 },
-      { name: "PHP", icon: "/icons/css.png", proficiency: 65 },
+      { name: "PHP", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/php/php-original.svg", proficiency: 65 },
       { name: "SQL", icon: "/icons/mysql.png", proficiency: 80 },
     ],
     Frontend: [
@@ -22,19 +22,19 @@ const Skills = () => {
       { name: "Node.js", icon: "/icons/node.png", proficiency: 85 },
       { name: "Express.js", icon: "/icons/express.png", proficiency: 85 },
       { name: "REST API", icon: "/icons/node.png", proficiency: 88 },
-      { name: "JWT Auth", icon: "/icons/node.png", proficiency: 82 },
+      { name: "JWT Auth", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/json/json-original.svg", proficiency: 82 },
     ],
     Libraries: [
-      { name: "Redux Toolkit", icon: "/icons/react.png", proficiency: 80 },
-      { name: "Axios", icon: "/icons/javascript.png", proficiency: 85 },
-      { name: "Socket.io", icon: "/icons/node.png", proficiency: 70 },
+      { name: "Redux Toolkit", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/redux/redux-original.svg", proficiency: 80 },
+      { name: "Axios", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/axios/axios-plain.svg", proficiency: 85 },
+      { name: "Socket.io", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/socketio/socketio-original.svg", proficiency: 70 },
     ],
     Tools: [
       { name: "Git", icon: "/icons/git.png", proficiency: 90 },
       { name: "GitHub", icon: "/icons/github.png", proficiency: 90 },
-      { name: "Docker", icon: "/icons/github.png", proficiency: 65 },
+      { name: "Docker", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg", proficiency: 65 },
       { name: "MongoDB", icon: "/icons/mongodb.png", proficiency: 85 },
-      { name: "Postman", icon: "/icons/github.png", proficiency: 88 },
+      { name: "Postman", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postman/postman-original.svg", proficiency: 88 },
     ],
   };
 
